@@ -12,7 +12,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - [Install Elk](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/install-elk.yml)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
 - Beats in Use
