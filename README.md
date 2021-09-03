@@ -96,7 +96,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the Filebeat and Metricbeat configuration files to your Ansible container.
-- Update the host file to include the ELK server and ELKServer IP Address. Update the Filebeat and Metricbeat configuration files to specify running the Filebeat and Metricbeat playbooks for webservers.
+- Update the host file to include the ELK server and ELKServer IP Address. Update the Filebeat and Metricbeat playbook files to specify running on the webservers.
 - Run the playbook, and navigate to "http://[YOUR.ELK.VM.IP]:5601/app/kibana" to check that the installation worked as expected.
 
 
