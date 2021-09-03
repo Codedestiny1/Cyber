@@ -5,11 +5,11 @@ Cybersecurity
 
 The files in this repository were used to configure the network depicted below.
 
-!(Images/Diagram_ELK Stack.png)
+[Network Diagram](https://github.com/Codedestiny1/Cyber/blob/Main/Images/"Diagram_ELK Stack.png")
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the install-elk.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  - #Ansible/install-elk.yml
 
 This document contains the following details:
 - Description of the Topologu
@@ -40,35 +40,40 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Jump-Box-Provisioner | Gateway Router                           | 10.0.0.4   | Linux 1vCPUs 1GiB Ram |
 | Web-1                | Webserver                                | 10.0.0.7   | Linux 1vCPUs 2GiB Ram |
 | Web-2                | Webserver                                | 10.0.0.8   | Linux 1vCPUs 2GiB Ram |
-| ELK-Server           | Database for Network Security Monitoring | 10.1.0.4   | Linux 2vCPUs 8GiB Ram |
+| ELK-Server           | Database for Network Security Monitoring | 10.1.0.5   | Linux 2vCPUs 8GiB Ram |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 174.56.226.201
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by SSH (port 22) and HTTP (port 80).
+- Jump-Box-Provisioner can access the ELK Server from the Public IP address 174.56.226.201
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name                 | Publicly Accessible | Allowed IP Addresses |
+|----------------------|---------------------|----------------------|
+| Jump-Box-Provisioner |        Yes          |    174.56.226.201    |
+| Web-1                |        No           |    10.0.0.4          |
+| Web-2                |        No           |    10.0.0.4          |
+| ELK-Server           |        No           |    10.0.0.4          |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because we have created a code that contains the configuration of a server. That code can be version controlled and easily audited.
+-The main advantage of automating configuration with Ansible is the ability to install software and change configuration files in thousands of servers within a few minutes.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install docker.io downloads the software package for the Docker engine used for running containers.
+- Install python3-pip downloads the software package used to install Python software. 
+- Install Docker Module initiates the python client for Docker which is required by Ansible to control the state of Docker containers.
+- Increase Virtual memory sets the ELK Server to use more memory to allow the ELK container to run.
+- Use more memory uses Ansible's sysctl module to configure the increased virtual memory everytime the VM has been restarted.
+- Download and launch a docker elk container downloads the docker contained called sebp/elk:761. sebp is the organization that made the container. elk is the container. 761 is the version. 5601:5601, 9200:9200, 5044:5044 configures the container to start with those port mappings. State: Started - starts the container.
+- Enable service docker on boot allows the docker service to start up automatically if you restart the ELK machine.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
