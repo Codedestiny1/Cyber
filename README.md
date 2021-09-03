@@ -15,8 +15,8 @@ This document contains the following details:
 - Description of the Topologu
 - Access Policies
 - ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
+- Beats in Use
+- Machines Being Monitored
 - How to Use the Ansible Build
 
 
@@ -24,12 +24,13 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available and scalable, in addition to restricting access to the network.
+-Load balancers protect the confidentiality aspect of the CIA Triad by providing a public IP address to mask backend resources from direct internet access
+-The advantage of our jump box is that it acts as our gateway router between VMs on a network. Securing and monitoring this single gateway allows us to focus ont he single connnection to the jump box instead of multiple connections between all the virtual machines. Like the load balancer, the jump box is exposed to the public internet, sits in front of other machines that are not exposed to the public internet, and controls access to the virtual machines by allowing connections from specific IP addresses and forwarding them to the back end resources. To secure the jump box we limit the number of machines it can access, lock the root account and limit sudo access of the administrator account on the jump box, implement log monitoring on the jump box, add two factor authentication for SSH login to the jump box, implement a host firewall (UFW or IPtables(RedTeam-SG)) on the jump box, and limit the jump box network access within the virtual private network (RedTeamNet/ELKNet).
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system (log files (Filebeat)) and system metrics (Metricbeat). ELK server does this through Beats (Open source data shippers). We will be utilizing two (2) beats Filebeat and Metricbeat. Not covered in this topology is six (6) other beats that can be configured on the ELK server (Auditbeat for audit data, Functionbeat for cloud data, Heartbeat for Availability, Journalbeat for Systemd journals, Packbeat for network traffic, and Winlogbeat for windows event logs).
+-Filebeat collects log streams including their pod, container, node, VM, host, and other metadata for automatic correlation. It detects new containers and monitors them.
+-Metricbeat collects system-level CPU usage, memory, filesystem, disk IO, network IO statistics, as well as statistics for every process running on the systems.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
