@@ -108,7 +108,7 @@ If you already have Ansible configuration installed and a host file then you wil
 
 You will have to configure your filebeat/metricbeat YAML configuration files and ansible hosts configuration files to your specific network IP addresses and ports you have configured on the cloud or on-premise.
 
-[AnsibleHost]()
+[AnsibleHost](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/HostConfiguration.docx)
 [FilebeatConfiguration](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/FilebeatConfiguration.docx)
 [MetricbeatConfiguration](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/MetricbeatConfiguration.docx)
 
