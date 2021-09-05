@@ -108,14 +108,14 @@ If you already have Ansible configuration installed and a host file then you wil
 
 You will have to configure your filebeat/metricbeat YAML configuration files and ansible hosts configuration files to your specific network IP addresses and ports you have configured on the cloud or on-premise.
 
-[AnsibleHost](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/HostConfiguration.docx)
-[FilebeatConfiguration](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/FilebeatConfiguration.docx)
-[MetricbeatConfiguration](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/MetricbeatConfiguration.docx)
+- [AnsibleHost](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/HostConfiguration.txt)
+- [FilebeatConfiguration](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/FilebeatConfiguration.txt)
+- [MetricbeatConfiguration](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/MetricbeatConfiguration.txt)
 
 
 Once the host and configuration files are complete you can start creating YAML playbooks for filebeat and metricbeat. 
-![FilebeatPlaybook](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/FilebeatPlaybook.docx)
-![MetricbeatPlaybook](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/MetricbeatPlaybook.docx)
+- ![FilebeatPlaybook](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/FilebeatPlaybook.txt)
+- ![MetricbeatPlaybook](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/MetricbeatPlaybook.txt)
 
 - Run ansible-playbook filebeat-playbook.yml from the filebeat folder
 - Run ansible-playbook metricbeat-playbook.yml from the metricbeat folder
