@@ -59,7 +59,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump-Box-Provisioner |        Yes          |    174.56.226.201           |
 | Web-1                |        No           |    10.0.0.4                 |
 | Web-2                |        No           |    10.0.0.4                 |
-| ELK-Server           |        No           |    174.56.226.201, 10.0.0.4 |
+| ELK-Server           |        Yes          |    174.56.226.201, 10.0.0.4 |
 
 ### Elk Configuration
 
