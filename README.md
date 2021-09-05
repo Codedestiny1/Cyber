@@ -106,7 +106,7 @@ If you already have Ansible configuration installed and a host file then you wil
 "curl -L -O https://raw.githubusercontent.com/elastic/beats/7.6/deploy/docker/filebeat.docker.yml" to get the filebeat configuration file. You can do the same method for metricbeat in the metricbeat folder. Do "docker pull docker.elastic.co/beats/metricbeat:7.6.2" or
 "curl -L -O https://raw.githubusercontent.com/elastic/beats/7.6/deploy/docker/metricbeat.docker.yml" 
 
-You will have to configure your filebeat/metricbeat YAML configuration files and ansible hosts configuration files to your specific network IP addresses and ports you have configured on the cloud or on-premise.
+You will have to configure your filebeat/metricbeat YAML configuration files and ansible hosts configuration files to your specific network IP addresses and ports you have configured on the cloud or on-premise. For AnsibleHost web 1 and 2 are found under webservers and ELKServer is found under elk.
 
 - [AnsibleHost](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/HostConfiguration.txt)
 - [FilebeatConfiguration](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/FilebeatConfiguration.txt)
