@@ -101,8 +101,9 @@ SSH into the control node and follow the steps below:
 
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-If you already have Ansible configuration installed and a host file then you will need to copy filebeat and metric beat configuration files to new /etc folders. Let's assume in the Ansible container your already running in /etc/ansible. Create a filebeat and metricbeat folder in your /etc directory (/etc/filebeat/)(/etc/metricbeat). In the filebeat folder you can either do "docker pull docker.elastic.co/beats/filebeat:7.6.2" or  
-"curl -L -O https://raw.githubusercontent.com/elastic/beats/7.6/deploy/docker/filebeat.docker.yml" to get the filebeat configuration file. You can do the same method for metricbeat in the metricbeat folder. Do "docker pull docker.elastic.co/beats/metricbeat:7.6.2" or 
+
+If you already have Ansible configuration installed and a host file then you will need to copy filebeat and metric beat configuration files to new /etc folders. Let's assume in the Ansible container your already running in /etc/ansible. Create a filebeat and metricbeat folder in your /etc directory (/etc/filebeat/)(/etc/metricbeat). In the filebeat folder you can either do "docker pull docker.elastic.co/beats/filebeat:7.6.2" or
+"curl -L -O https://raw.githubusercontent.com/elastic/beats/7.6/deploy/docker/filebeat.docker.yml" to get the filebeat configuration file. You can do the same method for metricbeat in the metricbeat folder. Do "docker pull docker.elastic.co/beats/metricbeat:7.6.2" or
 "curl -L -O https://raw.githubusercontent.com/elastic/beats/7.6/deploy/docker/metricbeat.docker.yml" 
 
 You will have to configure your filebeat/metricbeat YAML configuration files and ansible hosts configuration files to your specific network IP addresses and ports you have configured on the cloud or on-premise.
@@ -116,5 +117,5 @@ Once the host and configuration files are complete you can start creating YAML p
 ![FilebeatPlaybook]()
 ![MetricbeatPlaybook]()
 
--Run ansible-playbook filebeat-playbook.yml from the filebeat folder
--Run ansible-playbook metricbeat-playbook.yml from the metricbeat folder
+- Run ansible-playbook filebeat-playbook.yml from the filebeat folder
+- Run ansible-playbook metricbeat-playbook.yml from the metricbeat folder
