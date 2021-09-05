@@ -115,7 +115,7 @@ You will have to configure your filebeat/metricbeat YAML configuration files and
 
 Once the host and configuration files are complete you can start creating YAML playbooks for filebeat and metricbeat. 
 ![FilebeatPlaybook](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/FilebeatPlaybook.docx)
-![MetricbeatPlaybook]()
+![MetricbeatPlaybook](https://github.com/Codedestiny1/Cyber/blob/main/Ansible/MetricbeatPlaybook.docx)
 
 - Run ansible-playbook filebeat-playbook.yml from the filebeat folder
 - Run ansible-playbook metricbeat-playbook.yml from the metricbeat folder
